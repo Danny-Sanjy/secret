@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Для Любимой❤️</title>
+
+<link rel="stylesheet" href="css/typing.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/hearts.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/final.css">
+  
+</head>
+<body>
+
+  <section id="hearts" class="scene"></section>
+
+  <section class="gallery">
+    <div class="gallery-track">
+      <div class="gallery-item"><img src="assets/image/gallery/moya.jpg" alt="Фото 1"></div>
+      <div class="gallery-item"><img src="assets/image/gallery/moya1.jpg" alt="Фото 2"></div>
+      <div class="gallery-item"><img src="assets/image/gallery/moya2.jpg" alt="Фото 3"></div>
+      <div class="gallery-item"><img src="assets/image/gallery/moya3.jpg" alt="Фото 4"></div>
+      <div class="gallery-item"><img src="assets/image/gallery/moya4.jpg" alt="Фото 5"></div>
+      <!-- до 18 фото -->
+    </div>    
+  </section>
+
+  
+
+  
+
+
+<!-- 💗 ИНТЕРАКТИВНЫЕ КНОПКИ -->
+<section class="love-buttons">
+  <h2>Нажми…</h2>
+
+  <button data-text="Потому что с тобой спокойно. По-настоящему.">
+    💌 Почему я тебя люблю
+  </button>
+
+  <button data-text="Даже если ты этого не видишь — ты невероятная
+  и я всегда готов помочь тебе во всём.">
+    🌙 Если тебе грустно
+  </button>
+
+  <button data-text="Ты — мой самый тёплый выбор. Каждый день радуюсь что именно ты моя девушка
+  сладких снов , любимая ❤️🌹.">
+    ✨ Перед сном
+  </button>
+</section>
+  
+<!-- 🌑 МОДАЛЬНОЕ ОКНО -->
+<div class="love-modal" id="loveModal">
+  <div class="love-box">
+    <p id="loveText"></p>
+    <button onclick="closeLove()">Закрыть</button>
+  </div>
+</div>
+
+
+<section class="typing-section">
+  <p id="typingText"></p>
+</section>
+
+<section class="heart-game">
+  <h2>Поймай сердце 💗</h2>
+  <p class="game-hint">Одно из них — особенное</p>
+
+  <div id="gameArea"></div>
+</section>
+
+<div class="game-modal" id="gameModal">
+  <div class="game-box">
+    <p>Это сердце — ты ❤️</p>
+    <button onclick="closeGame()">Продолжить</button>
+  </div>
+</div>
+
+
+
+
+<script src="js/typing.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/hearts.js"></script>
+  <script src="js/buttons.js"></script>
+  <script src="js/gallery.js"></script>
+
+</body>
+</html>
