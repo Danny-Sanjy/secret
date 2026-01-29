@@ -1,0 +1,74 @@
+.scene {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  perspective: 1000px;
+  overflow: hidden;
+  background: radial-gradient(circle at top, #1a1a2e, #0f0f14);
+}
+
+/* сердце */
+.heart {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+/* форма сердца */
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 240px;
+  background: #ff4d6d;
+  border-radius: 150px 150px 0 0;
+  z-index: 0; /* фон позади текста */
+}
+
+.heart::before {
+  left: 150px;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.heart::after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+/* текст внутри сердца */
+.heart .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 260px;
+  height: 260px;
+  transform: translate(-50%, -50%) rotateY(0deg); /* фиксируем текст */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 24px;
+  color: white;
+  pointer-events: none;
+  z-index: 10; /* поверх формы сердца */
+  backface-visibility: hidden; /* предотвращает инверсию */
+}
+
+
+
+/* плавное падение */
+@keyframes fall {
+  from { transform: translateY(-300px) rotateY(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  to { transform: translateY(110vh) rotateY(360deg); opacity: 1;     }
+}
+
+/* класс для паузы */
+.paused {
+  animation-play-state: paused;
+}

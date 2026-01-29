@@ -1,0 +1,12 @@
+.typing-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+#typingText {
+  font-size: 22px;
+  line-height: 1.7;
+  color: #ff0000;
+  max-width: 600px;
+  margin: 0 auto;
+}

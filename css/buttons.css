@@ -1,0 +1,45 @@
+.love-buttons {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.love-buttons h2 {
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+.love-buttons button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 18px;
+  font-size: 18px;
+  border-radius: 25px;
+  border: none;
+  background: linear-gradient(135deg, #ff4d6d, #ff758f);
+  color: white;
+  cursor: pointer;
+}
+
+.love-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.love-box {
+  background: #111;
+  padding: 30px;
+  border-radius: 25px;
+  max-width: 90%;
+  text-align: center;
+}
+
+.love-box p {
+  color: #fff;
+  font-size: 20px;
+  line-height: 1.6;
+}

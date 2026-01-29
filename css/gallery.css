@@ -1,0 +1,153 @@
+/* Галерея */
+.gallery {
+
+  overflow-x: auto;
+  padding: 40px 10px;
+ 
+  display: flex;
+  justify-content: flex-start;
+  background: radial-gradient(circle at center, #0f0f14, #1a1a2e);
+  position: relative;
+}
+
+.gallery-track {
+  display: flex;
+  gap: 25px;
+  padding: 20px;
+ width: 100%;
+}
+
+.gallery-item {
+  flex: 0 0 auto;
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 2px solid rgba(255, 77, 109, 0.2);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 18px;
+  transition: transform 0.4s ease;
+}
+
+/* Эффект при наведении */
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 77, 109, 0.4);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Эффект при удержании фото > 3.4 секунд */
+.gallery-item.hovered {
+  transform: scale(1.15) translateY(-10px);
+  box-shadow: 0 0 40px rgba(255, 77, 109, 0.8),
+              0 0 80px rgba(255, 77, 109, 0.4);
+  z-index: 10;
+}
+
+.gallery-item.hovered::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  border-radius: 30px;
+  background: radial-gradient(circle, rgba(255, 77, 109, 0.3), transparent);
+  animation: pulse-glow 1.5s infinite;
+  z-index: -1;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    opacity: 0.6; 
+    transform: scale(0.95); 
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1.05); 
+  }
+}
+
+/* Модальное окно */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 85vh;
+  border-radius: 20px;
+  animation: zoom 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 20px 60px rgba(255, 77, 109, 0.5);
+}
+
+@keyframes zoom {
+  from { 
+    transform: scale(0.3) rotate(-5deg); 
+    opacity: 0; 
+  }
+  to { 
+    transform: scale(1) rotate(0deg); 
+    opacity: 1; 
+  }
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  color: #fff;
+  font-size: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  z-index: 10000;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.close:hover,
+.close:focus {
+  color: #ff4d6d;
+  transform: rotate(90deg) scale(1.2);
+}
+
+/* Адаптив для галереи */
+@media (max-width: 650px) {
+  .gallery-item {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .gallery-track {
+    gap: 15px;
+  }
+  
+  .close {
+    right: 20px;
+    font-size: 40px;
+  }
+}
